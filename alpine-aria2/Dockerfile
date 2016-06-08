@@ -1,8 +1,6 @@
 FROM alpine
 MAINTAINER binking338 <binking338@163.com>
 
-ENV CONFIGFILE  /etc/aria2/aria2.conf
-
 RUN apk --update --upgrade \ 
     add aria2 && \
     rm -rf /var/cache/apk/*
