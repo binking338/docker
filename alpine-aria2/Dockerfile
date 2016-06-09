@@ -1,15 +1,13 @@
-FROM alpine
+FROM alpine:latest
 MAINTAINER binking338 <binking338@163.com>
 
 RUN apk --update --upgrade \ 
     add aria2 && \
-    rm -rf /var/cache/apk/*
-
-RUN echo "--> generating token" && \
-tk=$(date +%s | sha256sum | base64 | head -c 16 ; echo) \
-: ${TOKEN:=$tk} && \
-echo "--> token: $TOKEN" && \
-echo
+    rm -rf /var/cache/apk/* && \
+	echo "--> generating token" && \
+	tk=$(date +%s | sha256sum | base64 | head -c 16 ; echo) : ${TOKEN:=$tk} && \
+	echo "--> token: $TOKEN" && \
+	echo
 
 VOLUME /downloads
 VOLUME /etc/aria2
