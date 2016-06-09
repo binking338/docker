@@ -16,4 +16,4 @@ VOLUME /etc/aria2
 
 EXPOSE 6800 6881-6889
 
-ENTRYPOINT ["aria2c", "--dir=/downloads", "--rpc-secret=$TOKEN", "--enable-rpc", "--rpc-listen-all=true", "--rpc-allow-origin-all"]
+ENTRYPOINT ["aria2c", "--dir=/downloads", "--rpc-secret=$TOKEN", "--enable-rpc=true", "--rpc-listen-all=true", "--rpc-allow-origin-all=true"]
