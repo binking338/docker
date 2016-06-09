@@ -22,3 +22,6 @@ EXPOSE $LOCAL_PORT $SERVER_PORT
 
 ADD shell/sslocal.sh /usr/local/bin
 ADD shell/ssserver.sh /usr/local/bin
+
+RUN chmod a+x /usr/local/bin/sslocal.sh
+RUN chmod a+x /usr/local/bin/ssserver.sh
