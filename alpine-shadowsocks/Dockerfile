@@ -17,7 +17,6 @@ RUN tk=$(date +%s | sha256sum | base64 | head -c 16 ; echo) : ${PASSWORD:=$tk}
 RUN echo "--> password: $PASSWORD"
 RUN echo "--> method: $METHOD"
 RUN echo "--> timeout: $TIMEOUT"
-echo
 
 EXPOSE $LOCAL_PORT $SERVER_PORT
 
