@@ -1,5 +1,9 @@
 #!/bin/sh
-
+echo "--> server_addr: $SERVER_ADDR"
+echo "--> server_port: $SERVER_PORT"
+echo "--> password: $PASSWORD"
+echo "--> method: $METHOD"
+echo "--> timeout: $TIMEOUT"
 echo "--> local_addr: $LOCAL_ADDR"
 echo "--> local_port: $LOCAL_PORT"
 #------------------------------------------------------------------------------

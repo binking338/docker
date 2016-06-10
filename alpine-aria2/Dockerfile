@@ -1,17 +1,18 @@
 FROM alpine:latest
 MAINTAINER binking338 <binking338@163.com>
 
-RUN apk --update --upgrade \ 
-    add aria2 && \
-    rm -rf /var/cache/apk/* && \
-	echo "--> generating token" && \
-	tk=$(date +%s | sha256sum | base64 | head -c 16 ; echo) : ${TOKEN:=$tk} && \
-	echo "--> token: $TOKEN" && \
-	echo
+RUN apk --update --upgrade add aria2 && rm -rf /var/cache/apk/*
 
 VOLUME /downloads
 VOLUME /etc/aria2
 
-EXPOSE 6800 6881-6889
+ENV RPC_LISTEN_PORT 6800
+ENV BT_LISTEN_PORT 6881
+ENV DHT_LISTEN_PORT 6891
 
-ENTRYPOINT ["aria2c", "--dir=/downloads", "--rpc-secret=$TOKEN", "--enable-rpc=true", "--rpc-listen-all=true", "--rpc-allow-origin-all=true"]
+EXPOSE $RPC_LISTEN_PORT $BT_LISTEN_PORT $DHT_LISTEN_PORT
+
+ADD shell/run.sh /run.sh
+RUN chmod a+x /run.sh
+
+ENTRYPOINT ["/run.sh"]
