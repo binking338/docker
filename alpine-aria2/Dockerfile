@@ -13,7 +13,6 @@ ENV TOKEN aria2
 
 EXPOSE $RPC_LISTEN_PORT $BT_LISTEN_PORT $DHT_LISTEN_PORT
 
-ADD shell/run.sh /run.sh
-RUN chmod a+x /run.sh
+ADD shell/run.sh /usr/local/bin
+RUN chmod a+x /usr/local/bin/run.sh
 
-ENTRYPOINT ["/run.sh"]
