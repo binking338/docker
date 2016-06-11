@@ -1,3 +1,3 @@
-aria2c --dir=/downloads --rpc-secret=$TOKEN --enable-rpc=true --rpc-listen-all=true --rpc-allow-origin-all=true
+aria2c --config-path=/etc/aria2/aria2.conf
 
 echo
