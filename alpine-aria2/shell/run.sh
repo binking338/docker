@@ -1,3 +1,3 @@
-aria2c --config-path=/etc/aria2/aria2.conf
+aria2c --conf-path=/etc/aria2/aria2.conf
 
 echo
