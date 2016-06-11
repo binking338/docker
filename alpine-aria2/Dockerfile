@@ -11,7 +11,3 @@ ENV BT_LISTEN_PORT 6881
 ENV DHT_LISTEN_PORT 6891
 
 EXPOSE $RPC_LISTEN_PORT $BT_LISTEN_PORT $DHT_LISTEN_PORT
-
-ADD shell/run.sh /usr/local/bin
-RUN chmod a+x /usr/local/bin/run.sh
-
