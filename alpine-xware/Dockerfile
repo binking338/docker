@@ -2,8 +2,7 @@ FROM alpine
 MAINTAINER binking338 <binking338@163.com>
 
 WORKDIR /xware
-ADD Xware1.0.31_x86_32_glibc.zip /xware
-ADD shell/monitor.sh /xware
+ADD shell/* /xware
 
 RUN chmod a+x /xware/monitor.sh
 
