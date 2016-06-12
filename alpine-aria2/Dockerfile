@@ -12,7 +12,7 @@ VOLUME ["/downloads", "/etc/aria2"]
 ADD shell/run.sh /usr/local/
 ADD aria2.conf /
 
-RUN apk --update --upgrade add aria2 && rm -rf /var/cache/apk/* && \
-    chmod a+x /usr/local/bin/run.sh
-    
+RUN apk --update --upgrade add aria2 && rm -rf /var/cache/apk/*
+RUN chmod a+x /usr/local/bin/run.sh
+
 ENTRYPOINT run.sh
