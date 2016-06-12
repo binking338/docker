@@ -13,5 +13,6 @@ ADD shell/run.sh /usr/local/
 ADD aria2.conf /
 
 RUN apk --update --upgrade add aria2 && rm -rf /var/cache/apk/* && \
-    chmod a+x /usr/local/bin/run.sh && \
-    run.sh
+    chmod a+x /usr/local/bin/run.sh
+    
+ENTRYPOINT run.sh

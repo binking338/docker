@@ -1,4 +1,4 @@
-[master e699010] mv-
+[master 92cf28d] mv=
  Committer: 王斌 <wangbin@wangbindeMacBook-Pro.local>
 Your name and email address were configured automatically based
 on your username and hostname. Please check that they are accurate.
@@ -12,4 +12,5 @@ After doing this, you may fix the identity used for this commit with:
 
     git commit --amend --reset-author
 
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ 1 file changed, 15 insertions(+)
+ create mode 100644 cp
