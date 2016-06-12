@@ -1,4 +1,5 @@
 #!/bin/sh
+[ -z $PASSWORD ] && PASSWORD=$(date +%s | sha256sum | base64 | head -c 16 ; echo)
 echo "--> server_addr: $SERVER_ADDR"
 echo "--> server_port: $SERVER_PORT"
 echo "--> password: $PASSWORD"

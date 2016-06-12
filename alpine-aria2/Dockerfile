@@ -1,13 +1,17 @@
 FROM alpine:latest
 MAINTAINER binking338 <binking338@163.com>
 
-RUN apk --update --upgrade add aria2 && rm -rf /var/cache/apk/*
-
-VOLUME /downloads
-VOLUME /etc/aria2
-
 ENV RPC_LISTEN_PORT 6800
 ENV BT_LISTEN_PORT 6881
 ENV DHT_LISTEN_PORT 6891
 
 EXPOSE $RPC_LISTEN_PORT $BT_LISTEN_PORT $DHT_LISTEN_PORT
+
+VOLUME ["/downloads", "/etc/aria2"] 
+
+ADD shell/run.sh /usr/local/
+ADD aria2.conf /
+
+RUN apk --update --upgrade add aria2 && rm -rf /var/cache/apk/* && \
+    chmod a+x /usr/local/bin/run.sh && \
+    run.sh
